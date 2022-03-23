@@ -4,11 +4,13 @@
  */
 package com.moneyapp.objects;
 
+import java.io.Serializable;
+
 /**
  *
  * @author corey
  */
-public class User {
+public class User implements Serializable {
 
     private int id;
     private String currency;

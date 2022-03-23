@@ -4,6 +4,7 @@
  */
 package com.moneyapp.objects;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
@@ -11,7 +12,7 @@ import java.util.Date;
  *
  * @author corey
  */
-public class Transaction {
+public class Transaction implements Serializable {
 
     private int userId;
     private Date date;

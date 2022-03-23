@@ -22,11 +22,13 @@ public class BalanceHandler implements Handler {
 
     @Override
     public void handle(Context ctx) throws Exception {
+        LOG.info("Handling balance...");
 //        String TOKEN = ctx.maybeGet(String.class).orElse(null);
 //        LOG.info("Token is: {}", TOKEN);
         // Get user token from db
 
         // Get all transactions
+        // TODO: Change to ctx.get(TransactionService.class)
         TransactionService ts = new TransactionService();
         String totalBalance = ts.getTotalUserBalance(1).toString();
 

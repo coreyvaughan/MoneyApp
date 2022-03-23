@@ -21,7 +21,6 @@ public class RequestAuthenticator implements Handler {
     @Override
     public void handle(Context ctx) throws Exception {
         try {
-
             LOG.info("Checking authorization header...");
             String authHeader = ctx.getRequest().getHeaders().get(HttpHeaderNames.AUTHORIZATION);
 

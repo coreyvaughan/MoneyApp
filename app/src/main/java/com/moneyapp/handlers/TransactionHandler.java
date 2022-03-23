@@ -7,6 +7,8 @@ package com.moneyapp.handlers;
 import com.moneyapp.objects.Transaction;
 import com.moneyapp.services.TransactionService;
 import java.util.List;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import ratpack.handling.Context;
 import ratpack.handling.Handler;
 import ratpack.jackson.Jackson;
@@ -17,13 +19,16 @@ import ratpack.jackson.Jackson;
  */
 public class TransactionHandler implements Handler {
 
+    private static final Logger LOG = LoggerFactory.getLogger(TransactionHandler.class);
+
     @Override
     public void handle(Context ctx) throws Exception {
+        LOG.info("Handling transaction...");
+
         // Get all transactions
         TransactionService ts = new TransactionService();
         List<Transaction> response = ts.getAllUserTransactions(1);
 
         ctx.render(Jackson.json(response));
     }
-
 }
